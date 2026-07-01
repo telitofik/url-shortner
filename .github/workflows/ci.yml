@@ -39,3 +39,4 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: /home/runner/work/url-shortner/url-shortner/database/database.sqlite
+          APP_DEBUG: true
