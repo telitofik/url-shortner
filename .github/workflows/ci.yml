@@ -38,5 +38,5 @@ jobs:
       - name: Run the test
         run: php artisan test
         env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: /home/runner/work/url-shortner/url-shortner/database/database.sqlite
+          DB_CONNECTION: sqlite
+          DB_DATABASE: /home/runner/work/url-shortner/url-shortner/database/database.sqlite
