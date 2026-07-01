@@ -1,0 +1,29 @@
+name: CI - URL Shortener Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v3
+
+      - name: PHP setup
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Composer install
+        run: composer install --no-interaction
+
+      - name: ENV setup
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Run the test
+        run: php artisan test
