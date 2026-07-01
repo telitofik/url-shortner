@@ -26,8 +26,7 @@ jobs:
           php artisan key:generate
 
       - name: SQLite setup
-        run: |
-          touch database/database.sqlite
+        run: touch /home/runner/work/url-shortner/url-shortner/database/database.sqlite
 
       - name: Database migrate
         run: php artisan migrate --force
