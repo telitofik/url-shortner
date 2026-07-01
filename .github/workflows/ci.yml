@@ -25,5 +25,18 @@ jobs:
           cp .env.example .env
           php artisan key:generate
 
+      - name: SQLite setup
+        run: |
+          touch database/database.sqlite
+
+      - name: Database migrate
+        run: php artisan migrate --force
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: /home/runner/work/url-shortner/url-shortner/database/database.sqlite
+
       - name: Run the test
         run: php artisan test
+        env:
+        DB_CONNECTION: sqlite
+        DB_DATABASE: /home/runner/work/url-shortner/url-shortner/database/database.sqlite
