@@ -35,7 +35,7 @@ jobs:
           DB_DATABASE: /home/runner/work/url-shortner/url-shortner/database/database.sqlite
 
       - name: Run the test
-        run: php artisan test --stop-on-failure -v
+        run: php artisan test --stop-on-failure -verbose
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: /home/runner/work/url-shortner/url-shortner/database/database.sqlite
